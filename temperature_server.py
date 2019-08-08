@@ -12,7 +12,8 @@ def temperature():
     if n is None:
         n = -1
     else:
-        n = 0 - n
+        n = 0 - int(n)
+    n = int(n)
     return render_template('temperature.html', temperatures=storage.get_all('celsius')[n:])
 
 
