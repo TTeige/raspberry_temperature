@@ -8,7 +8,10 @@ app = Flask(__name__)
 @app.route('/temperature')
 def temperature():
     storage = TemperatureStorage()
-    return storage.get_all('celsius')
+    s = ""
+    for a in storage.get_all('celsius'):
+        s += a
+    return
 
 
 @app.route('/')
