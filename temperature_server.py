@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, request, render_template
 
 from temperature_storage import TemperatureStorage
 
@@ -8,7 +8,10 @@ app = Flask(__name__)
 @app.route('/temperature')
 def temperature():
     storage = TemperatureStorage()
-    return jsonify(storage.get_all('celsius')[-1:])
+    n = request.args.get('n')
+    if n is None:
+        n = 1
+    return render_template('temperature', temperatures=storage.get_all('celsius')[-n:])
 
 
 @app.route('/')
