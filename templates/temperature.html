@@ -13,10 +13,10 @@
         </tr>
         {% for t in temperatures %}
         <tr>
-            {{ t.time }}
+            {{ t[2] }}
         </tr>
         <tr>
-            {{ t.temperature }}
+            {{ t[1] }}
         </tr>
         {% endfor %}
     </table>
