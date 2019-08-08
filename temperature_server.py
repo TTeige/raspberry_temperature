@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/temperature')
 def temperature():
     storage = TemperatureStorage()
-    return jsonify(storage.get_all('celsius'))
+    return jsonify(storage.get_all('celsius')[:-1])
 
 
 @app.route('/')
