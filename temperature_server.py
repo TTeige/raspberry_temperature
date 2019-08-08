@@ -10,7 +10,7 @@ def temperature():
     storage = TemperatureStorage()
     s = ""
     for a in storage.get_all('celsius'):
-        s += a
+        s += str(a)
     return
 
 
