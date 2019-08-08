@@ -11,7 +11,7 @@ def temperature():
     n = request.args.get('n')
     if n is None:
         n = 1
-    return render_template('temperature', temperatures=storage.get_all('celsius')[-n:])
+    return render_template('temperature.html', temperatures=storage.get_all('celsius')[-n:])
 
 
 @app.route('/')
