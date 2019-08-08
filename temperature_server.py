@@ -5,7 +5,6 @@ from temperature_storage import TemperatureStorage
 storage = TemperatureStorage()
 
 app = Flask(__name__)
-app.run(host='0.0.0.0')
 
 
 @app.route('/temperature')
@@ -16,3 +15,7 @@ def temperature():
 @app.route('/')
 def index():
     return ''
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
