@@ -6,13 +6,20 @@
 </head>
 <body>
 <div>
-    <ul>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Temperature</th>
+        </tr>
         {% for t in temperatures %}
-        <li>
-            {{ t }}
-        </li>
+        <tr>
+            {{ t.time }}
+        </tr>
+        <tr>
+            {{ t.temperature }}
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
 </div>
 </body>
 </html>
