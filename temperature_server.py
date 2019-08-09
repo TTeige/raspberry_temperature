@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request
 
 from temperature_storage import TemperatureStorage
 
@@ -14,7 +14,7 @@ def temperature():
     else:
         n = 0 - int(n)
     n = int(n)
-    return render_template('temperature.html', temperatures=storage.get_all('celsius')[n:])
+    return storage.get_all('celsius')[n:]
 
 
 @app.route('/')
